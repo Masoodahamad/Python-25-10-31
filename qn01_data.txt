@@ -1,0 +1,1 @@
+list:['al', 'the', 'best']tuple:('al', 'the', 'best')
