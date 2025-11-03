@@ -1,0 +1,2 @@
+List : ['Abduk', 'Basheer', 'Masood']
+Tuple : ('Abduk', 'Basheer', 'Masood')

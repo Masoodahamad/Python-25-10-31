@@ -1,4 +1,4 @@
-list = input("Enter number seperated by spaces")
+list = input("Enter number seperated by spaces: ")
 list_num = list.split()
 sum = 0
 for num in list_num:

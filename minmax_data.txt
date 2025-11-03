@@ -1,0 +1,3 @@
+List : [1, 2, 3, 4, 5]
+Maximum: 5
+Minimum: 1
