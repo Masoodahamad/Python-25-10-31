@@ -2,7 +2,7 @@ employees = []
 
 def add_employee(employee):
     employees.append(employee)
-    print("Employee added successfully")
+    print(f"Employee {name} added successfully")
 
 def search_employee(id):
     i = 0

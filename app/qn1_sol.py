@@ -1,4 +1,4 @@
-words_seq = input("Words (seperated by spaces)")
+words_seq = input("Words (seperated by spaces): ")
 print(words_seq)
 words = words_seq.split() # by default ' ' seperator
 print(words, type(words))
