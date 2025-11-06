@@ -9,7 +9,7 @@ def add_employee(employee):
       session.commit()
       print("Employee added successfully")
 
-def search_employee(id, salary):
+def search_employee(id): 
     employee = session.query(Employee).filter_by(id = id).first()
     return employee
 
@@ -24,7 +24,7 @@ def update_employee(id, salary):
         print("Employee not found")
 
 def delete_employee(id):
-    old_employee = search_employee
+    old_employee = search_employee(id)
     if not old_employee:
         print("Employee NOt Found")
         return

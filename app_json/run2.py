@@ -21,11 +21,13 @@ while True:
   elif choice == 2:
     print("Enter id to search:")
     id = int(input())
-    index = repo2.search_employee(id)
-    if index != -1:
-       print("Searched Employee: ", repo2.employees[index])
+    old_employee = repo2.search_employee(id)
+    if not old_employee:
+       print("Employee not found")
     else:
-        print("Employee not found")
+       print("Searched Employee: ", old_employee)
+
+        
   elif choice == 3:
     print("Enter id to update")
     id = int(input())
@@ -37,12 +39,21 @@ while True:
     id = int(input())
     old_employee = repo2.search_employee(id)
     if not old_employee:
-        repo2.employees.pop(index)
-        print("Employee deleted successfully")
-    else:
         print("Employee not found")
+    else:
+        print(old_employee)
+        if input('Are you sure to delete(y/n)?').upper() == 'Y':
+                repo2.delete_employee(id)
+                print(f'Employee deleted successfully')
   elif choice == 5:
-    print(repo2.employees)
+    employees = repo2.read_all_employees()
+    if len(employees) == 0:
+      print('No employee exist.')
+    else:
+      print('List of Employees:')
+      for employee in employees:
+        print(employee)
+
   elif choice == 6:
      print("Exiting program")
      break
