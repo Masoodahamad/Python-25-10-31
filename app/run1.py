@@ -1,35 +1,5 @@
-
-employees = []
-
-def add_employee(employee):
-    employees.append(employee)
-    print(f"Employee {name} added successfully")
-
-def search_employee(id):
-    i = 0
-    for employee in employees:
-        if employee["id"] == id:
-            return i
-        i += 1
-    return -1
-
-def update_employee(id, salary):
-    index = search_employee(id)
-    if index != -1:
-        employees[index]["salary"] = salary
-        print("Employee salary updated")
-    else:
-        print("Employee not found")
-
-
-def delete_employee(id):
-    index = search_employee(id)
-    if index != -1:
-        employees.pop(index)
-        print("Employee deleted successfully")
-    else:
-        print("Employee not found")
-
+from employee import employees
+import repo1 
 while True:
   print("1 - Add Employee")
   print("2 - Search Employee")
@@ -47,11 +17,11 @@ while True:
     role = input()
     print("Enter Salary:")
     salary = input()
-    add_employee({"id" : id, "name" : name, "role" : role, "salary" : salary})
+    repo1.add_employee({"id" : id, "name" : name, "role" : role, "salary" : salary})
   elif choice == 2:
     print("Enter id to search:")
     id = int(input())
-    index = search_employee(id)
+    index = repo1.search_employee(id)
     if index != -1:
        print("Searched Employee: ", employees[index])
     else:
@@ -61,11 +31,11 @@ while True:
     id = int(input())
     print("Enter salary to update")
     salary = int(input())
-    update_employee(id, salary)
+    repo1.update_employee(id, salary)
   elif choice == 4:
     print("Enter id to delete")
     id = int(input())
-    index = search_employee(id)
+    index = repo1.search_employee(id)
     if index != -1:
         employees.pop(index)
         print("Employee deleted successfully")
@@ -78,4 +48,3 @@ while True:
      break
   else:
     print("Re-enter invalid choice")
-
